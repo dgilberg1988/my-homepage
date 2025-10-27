@@ -1,0 +1,65 @@
+/* Simple, modern styles for a small homepage */
+:root{
+  --bg-1:#0ea5e9; /* sky blue */
+  --bg-2:#0369a1; /* deep blue */
+  --card-bg: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.06);
+  --text:#e6f7ff;
+  --muted: rgba(230,247,255,0.85);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:var(--text);
+  background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+.wrap{width:100%;max-width:880px}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border-radius:14px;
+  padding:2.25rem 2rem;
+  text-align:center;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.45), inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.avatar{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 1rem auto;
+  border:4px solid rgba(255,255,255,0.12);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.45);
+}
+
+h1{margin:0 0 .25rem 0;font-size:2rem}
+.intro{color:var(--muted);margin:0 0 1.25rem 0}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  background:rgba(255,255,255,0.12);
+  color:var(--text);
+  padding:.6rem 1rem;
+  border-radius:10px;
+  font-weight:600;
+  transition: all 160ms ease;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(2,6,23,0.35)}
+
+@media (max-width:420px){
+  .card{padding:1.5rem}
+  h1{font-size:1.5rem}
+  .avatar{width:110px;height:110px}
+}
