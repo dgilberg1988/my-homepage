@@ -1,7 +1,8 @@
 /* Simple, modern styles for a small homepage */
 :root{
-  --bg-1:#0ea5e9; /* sky blue */
-  --bg-2:#0369a1; /* deep blue */
+  /* switched to a pleasant purple gradient */
+  --bg-1:#7c3aed; /* violet */
+  --bg-2:#4c1d95; /* deep purple */
   --card-bg: rgba(255,255,255,0.06);
   --glass: rgba(255,255,255,0.06);
   --text:#e6f7ff;
