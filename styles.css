@@ -80,10 +80,13 @@ h1{margin:0 0 .25rem 0;font-size:2rem}
 
 /* Top header / nav (transparent, white text) */
 .site-header{
-  position:sticky;
+  /* fixed full-width header so nav stays at the top of the screen */
+  position:fixed;
+  left:0;
+  right:0;
   top:0;
   width:100%;
-  z-index:40;
+  z-index:999;
   background:transparent;
   padding:.6rem 1rem;
 }
@@ -91,6 +94,9 @@ h1{margin:0 0 .25rem 0;font-size:2rem}
 .logo{color:#fff;font-weight:700}
 .site-nav a{color:#fff;text-decoration:none;margin-left:1rem;font-weight:600;padding:.2rem .5rem;border-radius:6px}
 .site-nav a:hover{background:rgba(255,255,255,0.06)}
+
+/* Make space at the top so fixed header doesn't cover the content */
+.wrap{width:100%;max-width:880px;margin-top:72px}
 
 @media (max-width:420px){
   .card{padding:1.5rem}
