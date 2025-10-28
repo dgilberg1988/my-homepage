@@ -19,10 +19,30 @@
   </header>
   <main class="wrap">
     <div class="card">
-  <img src="assets/Headshot.jpg" alt="Profile photo" class="avatar" />
+      <img src="assets/Headshot.jpg" alt="Profile photo" class="avatar" />
       <h1>Hello, world!</h1>
       <p class="intro">I'm <strong>Your Name</strong>. Welcome to my homepage.</p>
       <a class="btn" href="#" role="button" aria-label="Contact me">Contact me</a>
+    </div>
+    
+    <!-- Weather Widget -->
+    <div class="weather-widget" id="weather-widget">
+      <div class="location" id="location">Seattle, WA</div>
+      <div class="temperature loading" id="temperature">Loading...</div>
+      <div class="weather-info" id="weather-info">
+        <div class="weather-item">
+          <div class="weather-label">Humidity</div>
+          <div class="weather-value" id="humidity">--%</div>
+        </div>
+        <div class="weather-item">
+          <div class="weather-label">Wind Speed</div>
+          <div class="weather-value" id="windspeed">-- mph</div>
+        </div>
+        <div class="weather-item">
+          <div class="weather-label">Feels Like</div>
+          <div class="weather-value" id="apparent-temp">--°</div>
+        </div>
+      </div>
     </div>
   </main>
 </body>
