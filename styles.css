@@ -98,8 +98,67 @@ h1{margin:0 0 .25rem 0;font-size:2rem}
 /* Make space at the top so fixed header doesn't cover the content */
 .wrap{width:100%;max-width:880px;margin-top:72px}
 
+/* Weather Widget Styles */
+.weather-widget {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.location {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.temperature {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.weather-item {
+  text-align: center;
+}
+
+.weather-label {
+  opacity: 0.8;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.weather-value {
+  font-weight: bold;
+}
+
+.loading {
+  opacity: 0.7;
+}
+
+.error {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
 @media (max-width:420px){
   .card{padding:1.5rem}
   h1{font-size:1.5rem}
   .avatar{width:110px;height:110px}
+  .weather-widget {padding: 20px;}
+  .temperature {font-size: 2.5em;}
+  .weather-info {font-size: 0.85em;}
 }

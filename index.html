@@ -45,5 +45,53 @@
       </div>
     </div>
   </main>
+
+  <script>
+    // Configuration - Seattle coordinates
+    const LATITUDE = 47.60621;
+    const LONGITUDE = -122.33207;
+    const CITY_NAME = "Seattle, WA";
+    
+    async function getWeatherData() {
+      try {
+        // Open-Meteo API call - no API key needed!
+        const response = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
+        );
+        
+        if (!response.ok) {
+          throw new Error('Weather data not available');
+        }
+        
+        const data = await response.json();
+        const current = data.current;
+        
+        // Update the display
+        document.getElementById('location').textContent = CITY_NAME;
+        document.getElementById('temperature').textContent = `${Math.round(current.temperature_2m)}°F`;
+        document.getElementById('humidity').textContent = `${current.relative_humidity_2m}%`;
+        document.getElementById('windspeed').textContent = `${Math.round(current.wind_speed_10m)} mph`;
+        document.getElementById('apparent-temp').textContent = `${Math.round(current.apparent_temperature)}°F`;
+        
+        // Remove loading class
+        document.getElementById('temperature').classList.remove('loading');
+        
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        
+        // Show error state
+        const widget = document.getElementById('weather-widget');
+        widget.classList.add('error');
+        document.getElementById('temperature').textContent = 'Error';
+        document.getElementById('location').textContent = 'Unable to load weather';
+      }
+    }
+    
+    // Load weather data when page loads
+    getWeatherData();
+    
+    // Optional: Refresh data every 10 minutes
+    setInterval(getWeatherData, 10 * 60 * 1000);
+  </script>
 </body>
 </html>
